@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import styles from '../style/Expence-module.css';  // Correct path for your CSS module
+import '../style/Expense-module.css';  
 
 const ExpenseValidationSchema = Yup.object().shape({
   name: Yup.string().required('Expense name is required'),
@@ -12,9 +12,9 @@ const ExpenseModal = ({ isOpen, onClose, onSave }) => {
   if (!isOpen) return null;
 
   return (
-    <div className={styles.modal}>
-      <div className={styles.modalContent}>
-        <span className={styles.close} onClick={onClose}>&times;</span>
+    <div className={"modal"} id="model">
+      <div className={"modalContent"}>
+        <span className={"close"} onClick={onClose}>&times;</span>
         <Formik
           initialValues={{ name: '', amount: '' }}
           validationSchema={ExpenseValidationSchema}
@@ -29,12 +29,12 @@ const ExpenseModal = ({ isOpen, onClose, onSave }) => {
               <label>
                 Expense Name:
                 <Field type="text" name="name" />
-                {errors.name && touched.name && <div className={styles.error}>{errors.name}</div>}
+                {errors.name && touched.name && <div className={"error"}>{errors.name}</div>}
               </label>
               <label>
                 Amount:
                 <Field type="number" name="amount" />
-                {errors.amount && touched.amount && <div className={styles.error}>{errors.amount}</div>}
+                {errors.amount && touched.amount && <div className={"error"}>{errors.amount}</div>}
               </label>
               <button type="submit">Add Expense</button>
             </Form>
