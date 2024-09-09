@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUser } from './Context';
+import { useUser } from '../../contexts/Context';
 
 const Calculation = () => {
   const { userDetails } = useUser();

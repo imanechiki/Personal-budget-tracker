@@ -39,6 +39,8 @@
   position: relative;
   transition: all 0.35s;
   overflow: hidden;
+  cursor: pointer;
+  border: none;
 }
 
 .button span {

@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react'; 
 import Cookie from 'js-cookie';
-import Header from './Header';
-import Description from './Description';
-import ExpenseModal from './ExpenseModal'; 
-import { UserProvider } from './Context'; 
-import styles from '../style/Dashboard.module.css';
+import Header from '../../components/Header/Header.jsx';
+import Description from '../../pages/dashboard/Description.jsx';
+import ExpenseModal from '../../components/Buttons/ExpenseButton/ExpenseModal.jsx'; 
+import { UserProvider } from '../../utils/contexts/Context.jsx'; 
+import styles from '../../style/Dashboard.module.css';
 
 const Dashboard = () => {
     const [expenses, setExpenses] = useState([]);
@@ -30,9 +30,7 @@ const Dashboard = () => {
                 <Header onAddExpense={handleAddExpense} onOpenModal={handleOpenModal} />
                 <ExpenseModal isOpen={modalOpen} onClose={handleCloseModal} onSave={handleAddExpense} />
                 <Description expenses={expenses} />
-                <h1>Welcome to Your Dashboard</h1>
 
-                {/* Render the modal here */}
             </div>
         </UserProvider>
     );
